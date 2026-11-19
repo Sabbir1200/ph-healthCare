@@ -5,21 +5,16 @@ import { sendResponse } from "../../utils/sendResponse";
 import type { IRequestUser } from "./auth.interface";
 import { AuthService } from "./auth.service";
 
-
-
-
-
-
 const registerPatient = catchAsync(async (req: Request, res: Response) => {
 	const payload = req.body;
 
-// 	if (!payload.success) {
-//     const errorMessage = payload.error.issues
-//         .map((issue) => issue.message)
-//         .join(", ");
+	// 	if (!payload.success) {
+	//     const errorMessage = payload.error.issues
+	//         .map((issue) => issue.message)
+	//         .join(", ");
 
-//     throw new Error(errorMessage);
-// }
+	//     throw new Error(errorMessage);
+	// }
 
 	const result = await AuthService.registerPatient(payload);
 
@@ -126,11 +121,33 @@ const refreshToken = catchAsync(async (req: Request, res: Response) => {
 		},
 	});
 });
+const forgotPassword = catchAsync(async (req: Request, res: Response) => {
+	const payload = req.body;
+	await AuthService.forgotPassword(payload);
+
+	sendResponse(res, {
+		statusCode: httpStatus.OK,
+		success: true,
+		message: `OTP sent to email : ${payload.email}`,
+		data: null,
+	});
+});
+const resetPassword = catchAsync(async (req: Request, res: Response) => {
+	const payload = req.body;
+	 await AuthService.resetPassword(payload);
+
+	sendResponse(res, {
+		statusCode: httpStatus.OK,
+		success: true,
+		message: "Password Changed successfully",
+		data: null,
+	});
+});
 const googleLogin = catchAsync(async (req: Request, res: Response) => {
 	const payload = req.body;
-	const result = await AuthService.googleLogin(payload)
-	
-	const {accessToken, refreshToken} = result;
+	const result = await AuthService.googleLogin(payload);
+
+	const { accessToken, refreshToken } = result;
 	res.cookie("accessToken", accessToken, {
 		httpOnly: true,
 		secure: false,
@@ -149,7 +166,7 @@ const googleLogin = catchAsync(async (req: Request, res: Response) => {
 		message: "New tokens generated successfully",
 		data: {
 			accessToken,
-			refreshToken
+			refreshToken,
 		},
 	});
 });
@@ -159,5 +176,7 @@ export const AuthController = {
 	loginUser,
 	getMe,
 	refreshToken,
-	googleLogin
+	googleLogin,
+	forgotPassword,
+	resetPassword,
 };
