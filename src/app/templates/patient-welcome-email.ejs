@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="supported-color-schemes" content="light dark" />
+  <title>Welcome to Healthcare</title>
+</head>
+
+<body style="margin:0; padding:0; background-color:#f4f7fb; font-family:Arial, Helvetica, sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+
+  <!-- Hidden Preheader Text -->
+  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+    Welcome to Healthcare, <%= name %>! Your patient account has been created successfully.
+  </div>
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+    style="background-color:#f4f7fb; padding:40px 15px;">
+    <tr>
+      <td align="center">
+
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+          style="max-width:550px; background-color:#ffffff; border-radius:12px; border:1px solid #e2e8f0; overflow:hidden;">
+
+          <!-- Header -->
+          <tr>
+            <td align="center"
+              style="background-color:#0d9488; padding:30px 20px;">
+              <h1 style="margin:0; color:#ffffff; font-size:26px; font-weight:bold;">
+                Healthcare
+              </h1>
+              <p style="margin:8px 0 0; color:#e0f2f1; font-size:14px;">
+                Your Health, Our Priority
+              </p>
+            </td>
+          </tr>
+
+          <!-- Content -->
+          <tr>
+            <td style="padding:35px 30px; color:#334155;">
+
+              <h2 style="margin:0 0 15px; color:#0f172a; font-size:22px;">
+                Welcome to Healthcare! 🎉
+              </h2>
+
+              <p style="font-size:15px; line-height:1.7; margin:0 0 15px;">
+                Hello <strong><%= name %></strong>,
+              </p>
+
+              <p style="font-size:15px; line-height:1.7; margin:0 0 22px;">
+                Thank you for registering with <strong>Healthcare</strong>. Your patient account has been created successfully, and we are excited to help you manage your health with ease.
+              </p>
+
+              <!-- Account Info / Features Box -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                style="background-color:#f0fdfa; border:1px solid #ccfbf1; border-radius:10px; margin-bottom:25px;">
+                <tr>
+                  <td style="padding:20px 22px;">
+                    <p style="margin:0 0 12px; color:#0f766e; font-size:14px; font-weight:bold;">
+                      Here is what you can do next:
+                    </p>
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                      style="font-size:14px; color:#334155; line-height:1.8;">
+                      <tr>
+                        <td style="padding-bottom:6px;">&#10003;&nbsp; Book appointments with verified doctors</td>
+                      </tr>
+                      <tr>
+                        <td style="padding-bottom:6px;">&#10003;&nbsp; Access your prescriptions and medical reports anytime</td>
+                      </tr>
+                      <tr>
+                        <td>&#10003;&nbsp; Complete your patient profile for faster consultations</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- CTA Button -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation">
+                <tr>
+                  <td align="center" style="padding:5px 0 25px;">
+                    <a href="<%= loginUrl %>" target="_blank"
+                      style="display:inline-block; background-color:#0d9488; color:#ffffff; text-decoration:none; font-size:15px; font-weight:bold; padding:14px 32px; border-radius:8px;">
+                      Go to Patient Dashboard
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="font-size:14px; line-height:1.7; margin:0 0 10px; color:#475569;">
+                If you have any questions or need assistance booking your first appointment, our support team is always here to help.
+              </p>
+
+              <p style="font-size:14px; line-height:1.7; margin:0; color:#334155;">
+                Warm regards,<br />
+                <strong>The Healthcare Team</strong>
+              </p>
+
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td align="center"
+              style="background-color:#f8fafc; padding:22px 20px; border-top:1px solid #e2e8f0;">
+
+              <p style="margin:0 0 8px; color:#64748b; font-size:13px;">
+                Thank you for trusting Healthcare with your well-being.
+              </p>
+
+              <p style="margin:0; color:#94a3b8; font-size:12px;">
+                &copy; <%= new Date().getFullYear() %> Healthcare. All rights reserved.
+              </p>
+
+              <p style="margin:10px 0 0; color:#94a3b8; font-size:11px;">
+                This is an automated email. Please do not reply.
+              </p>
+
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
